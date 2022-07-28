@@ -1,0 +1,47 @@
+dowload composer + php 8,1 về . Tiến hành cài composer vào đường dẫn chữ php.exe (C:/php/php.exe)
+tiến hành chạy
+
+
+#Dowload
+    - Composer
+        - https://getcomposer.org/download/
+    - laravel
+        - https://laravel.com/docs/9.x/installation#installation-via-composer
+
+
+#Lệnh cmd
+    - Chạy server
+        php artisan serve
+    - Tạo thư mục :
+        composer create-project laravel/laravel your-project-name
+    - Tạo file Controller
+        php .\artisan make:controller WelcomeController
+    - Tạo migration
+        php artisan migrate
+    -Tạo bảng students
+        php artisan make:migration create_students_table
+    -Tạo model student
+        php artisan make:model Student
+    - Reload code change in balade views
+        php artisan view:clear
+    - Tạo model + Controller
+        php artisan make:model Student -a
+
+
+#Lỗi
+    - Uncaught Error: Class "Illuminate\Foundation\Application"
+    - failed to open stream: No such file or directory in C:\...\vendor\composer\autoload_real.php
+        Chạy :
+            composer update --ignore-platform-reqs
+
+            composer dump-autoload
+            composer update --no-scripts
+            composer update
+
+    -PDOException::("could not find driver") khi chạy cmd php artisan migrate
+        Vào nơi cài php.exe -> tìm php.ini
+        - tìm tới dòng ;extension=pdo_mysql -> bỏ dấu ; trước -> save
+
+#Tool hỗ trợ code laravel
+    -Tạo debug bar tại chrome
+        - composer require barryvdh/laravel-debugbar --dev
