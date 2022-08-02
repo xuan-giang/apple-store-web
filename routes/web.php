@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
@@ -26,3 +27,17 @@ Route::get('/shop',
 
 Route::get('/details',
     action : [ProductDetailsController::class,'index'])->name('details');
+
+
+// Cart controller
+Route::get('/cart',
+    action : [CartController::class,'index'])->name('cart');
+
+Route::get('/add-to-cart',
+    action : [CartController::class,'add_to_cart'])->name('add_to_cart');
+
+Route::get('/update-to-cart',
+    action : [CartController::class,'update_to_cart'])->name('update_to_cart');
+
+Route::get('/remove_to_cart',
+    action : [CartController::class,'remove_to_cart'])->name('remove_to_cart');
