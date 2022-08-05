@@ -80,7 +80,7 @@
                     <a href="#" class="search-switch"><img src="{{asset('img/icon/search.png')}}" alt=""></a>
                     <a href="{{asset('/cart')}}"><img src="{{asset('img/icon/cart.png')}}" alt=""> <span>0</span></a>
 
-{{--                    <div id="div-price" class="price">{{'$'.$total}}</div>--}}
+                    <div id="div-price" class="price">{{'$'.$total}}</div>
                 </div>
             </div>
         </div>
@@ -155,7 +155,7 @@
             <div class="col-lg-12 text-center">
                 <div class="footer__copyright__text">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <p>Bản quyền thuộc nhóm 1 PHP năm 2022
+                    <p>Bản quyền thuộc nhóm 02 PMMNM
                     </p>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
@@ -178,97 +178,98 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
 
-{{--<script>--}}
-{{--    $(document).ready(function(){--}}
+<script>
+    $(document).ready(function(){
 
-{{--        $(".add-cart").click(function(){--}}
-{{--            let id = $(this).data('id_add_to_cart');--}}
-{{--            let name = $(this).data('name_add_to_cart');--}}
-{{--            $.ajax({--}}
-{{--                url: "{{route('add_to_cart')}}",--}}
-{{--                type: 'GET',--}}
+        $(".add-cart").click(function(){
 
-{{--                data: {id}--}}
-{{--            }).done(function (data) {--}}
-{{--                const div = document.getElementById('div-price');--}}
-{{--                div.textContent = '$'+data;--}}
-{{--                alert("Đã thêm "+name+"  vào giỏ hàng");--}}
-{{--            }).fail(function () {--}}
-{{--                alert("Thêm sản phẩm"+name+" thất bại ");--}}
-{{--            });--}}
-{{--        });--}}
-{{--    });--}}
+            let id = $(this).data('id_add_to_cart');
+            let name = $(this).data('name_add_to_cart');
+            $.ajax({
+                url: "{{route('add_to_cart')}}",
+                type: 'GET',
 
-{{--    $(document).ready(function(){--}}
+                data: {id}
+            }).done(function (data) {
+                const div = document.getElementById('div-price');
+                div.textContent = '$'+data;
+                alert("Đã thêm "+name+"  vào giỏ hàng");
+            }).fail(function () {
+                alert("Thêm sản phẩm"+name+" thất bại ");
+            });
+        });
+    });
 
-{{--        $(".btn-update-quantity").click(function(){--}}
-{{--            let btn_update = $(this);--}}
-{{--            let id = $(this).data('id');--}}
-{{--            let type = $(this).data('type');--}}
-{{--            $.ajax({--}}
-{{--                url: "{{route('update_to_cart')}}",--}}
-{{--                type: 'GET',--}}
-{{--                data: {id,type}--}}
-{{--            }).done(function (data) {--}}
+    $(document).ready(function(){
 
-{{--                const div = document.getElementById('div-price');--}}
-{{--                const div_subtotal = document.getElementById('subtotal');--}}
-{{--                const div_total = document.getElementById('total');--}}
-{{--                div.textContent = '$'+data;--}}
-{{--                div_subtotal.textContent = '$'+data;--}}
-{{--                div_total.textContent = '$'+data;--}}
-{{--               // alert("Đã thêm "+name+"  vào giỏ hàng");--}}
-{{--                let parent_tr = btn_update.parents('tr');--}}
-{{--                let price = parent_tr.find(".span-price").text()--}}
-{{--                let quantity = parent_tr.find(".span-quantity").text();--}}
-{{--                if(type === 'incre'){--}}
-{{--                    quantity++;--}}
-{{--                }else if(type === 'decre'){--}}
-{{--                    quantity--;--}}
-{{--                }--}}
-{{--                //alert("Đã thêm "+type+"  vào giỏ hàng");--}}
-{{--                if(quantity ==0){--}}
-{{--                    parent_tr.remove();--}}
-{{--                }else {--}}
-{{--                    parent_tr.find(".span-quantity").text(quantity);--}}
-{{--                    let sum = price*quantity;--}}
-{{--                    console.log(sum);--}}
-{{--                    parent_tr.find(".span-total-price").text(sum);--}}
-{{--                }--}}
+        $(".btn-update-quantity").click(function(){
+            let btn_update = $(this);
+            let id = $(this).data('id');
+            let type = $(this).data('type');
+            $.ajax({
+                url: "{{route('update_to_cart')}}",
+                type: 'GET',
+                data: {id,type}
+            }).done(function (data) {
+
+                const div = document.getElementById('div-price');
+                const div_subtotal = document.getElementById('subtotal');
+                const div_total = document.getElementById('total');
+                div.textContent = '$'+data;
+                div_subtotal.textContent = '$'+data;
+                div_total.textContent = '$'+data;
+               // alert("Đã thêm "+name+"  vào giỏ hàng");
+                let parent_tr = btn_update.parents('tr');
+                let price = parent_tr.find(".span-price").text()
+                let quantity = parent_tr.find(".span-quantity").text();
+                if(type === 'incre'){
+                    quantity++;
+                }else if(type === 'decre'){
+                    quantity--;
+                }
+                //alert("Đã thêm "+type+"  vào giỏ hàng");
+                if(quantity ==0){
+                    parent_tr.remove();
+                }else {
+                    parent_tr.find(".span-quantity").text(quantity);
+                    let sum = price*quantity;
+                    console.log(sum);
+                    parent_tr.find(".span-total-price").text(sum);
+                }
 
 
-{{--            }).fail(function () {--}}
-{{--                //alert("Thêm sản phẩm"+name+" thất bại ");--}}
-{{--            });--}}
-{{--        });--}}
-{{--    });--}}
+            }).fail(function () {
+                alert("Thêm sản phẩm"+name+" thất bại ");
+            });
+        });
+    });
 
-{{--    $(document).ready(function(){--}}
+    $(document).ready(function(){
 
-{{--        $(".cart__close").click(function(){--}}
-{{--            let btn_close = $(this);--}}
-{{--            let id = $(this).data('id');--}}
-{{--            $.ajax({--}}
-{{--                url: "{{route('remove_to_cart')}}",--}}
-{{--                type: 'GET',--}}
-{{--                data: {id}--}}
-{{--            }).done(function (data) {--}}
-{{--               // alert( "Bấm ");--}}
-{{--                const div = document.getElementById('div-price');--}}
-{{--                const div_subtotal = document.getElementById('subtotal');--}}
-{{--                const div_total = document.getElementById('total');--}}
-{{--                div.textContent = '$'+data;--}}
-{{--                div_subtotal.textContent = '$'+data;--}}
-{{--                div_total.textContent = '$'+data;--}}
-{{--                // xóa thẻ dòng--}}
-{{--                let parent_tr = btn_close.parents('tr');--}}
-{{--                parent_tr.remove();--}}
+        $(".cart__close").click(function(){
+            let btn_close = $(this);
+            let id = $(this).data('id');
+            $.ajax({
+                url: "{{route('remove_to_cart')}}",
+                type: 'GET',
+                data: {id}
+            }).done(function (data) {
+               // alert( "Bấm ");
+                const div = document.getElementById('div-price');
+                const div_subtotal = document.getElementById('subtotal');
+                const div_total = document.getElementById('total');
+                div.textContent = '$'+data;
+                div_subtotal.textContent = '$'+data;
+                div_total.textContent = '$'+data;
+                // xóa thẻ dòng
+                let parent_tr = btn_close.parents('tr');
+                parent_tr.remove();
 
-{{--            }).fail(function () {--}}
-{{--                alert( "Xóa sản phẩm thất bại !");--}}
-{{--            });--}}
-{{--        });--}}
-{{--    });--}}
-{{--</script>--}}
+            }).fail(function () {
+                alert( "Xóa sản phẩm thất bại !");
+            });
+        });
+    });
+</script>
 </body>
 </html>
