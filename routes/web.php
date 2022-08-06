@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +44,51 @@ Route::get('/update-to-cart',
 
 Route::get('/remove_to_cart',
     action : [CartController::class,'remove_to_cart'])->name('remove_to_cart');
+
+Route::get('/admin',
+    action : [AdminController::class,'index'])->name('admin');
+
+Route::get('/admin-customer',
+    action : [AdminController::class,'customer'])->name('customer');
+
+Route::get('/logout-admin',
+    action : [LoginController::class,'getLogoutAdmin'])->name('logout-admin');
+
+// Product manager
+
+Route::get('/admin-product',
+    action : [ProductManagerController::class,'index'])->name('admin-product');
+
+Route::get('/admin-product-create',
+    action : [ProductManagerController::class,'create'])->name('admin-product-create');
+
+Route::post('/admin-product-store',
+    action : [ProductManagerController::class,'store'])->name('admin-product-store');
+
+Route::get('/admin-product-delete',
+    action : [ProductManagerController::class,'delete'])->name('admin-product-delete');
+
+Route::get('/admin-product-update',
+    action : [ProductManagerController::class,'update'])->name('admin-product-update');
+
+Route::get('/admin-product-edit',
+    action : [ProductManagerController::class,'edit'])->name('admin-product-edit');
+
+//login admin
+Route::get('/log-admin',
+    action : [LoginController::class,'getLogAdmin'])->name('logAdmin');
+
+Route::post('/post-log-admin',
+    action : [LoginController::class,'postLogAdmin'])->name('postlogAdmin');
+
+// Bill
+Route::get('/admin-bill',
+    action : [\App\Http\Controllers\admin\BillManagerController::class,'index'])->name('admin-bill');
+Route::get('/admin-detail-bill',
+    action : [\App\Http\Controllers\admin\BillManagerController::class,'view'])->name('admin-detail-bill');
+
+Route::get('/admin-update-status-bill',
+    action : [\App\Http\Controllers\admin\BillManagerController::class,'update_status'])->name('admin-update-status-bill');
+
+Route::get('/details',
+    action : [ProductDetailsController::class,'index'])->name('details');
