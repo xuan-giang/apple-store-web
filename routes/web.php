@@ -92,3 +92,25 @@ Route::get('/admin-update-status-bill',
 
 Route::get('/details',
     action : [ProductDetailsController::class,'index'])->name('details');
+
+
+//Login
+
+Route::get('/login',
+    action : [LoginController::class,'getLogin']
+)->name('login');
+
+Route::get('/register',
+    action : [LoginController::class,'showRegister']
+);
+
+Route::post('/register',
+    action : [LoginController::class,'register']
+)->name('register');
+
+Route::post('/login',
+    action : [LoginController::class,'postLogin']
+)->name('postLogin');
+
+Route::get('/logout',
+    action : [LoginController::class,'getLogout'])->name('logout');
