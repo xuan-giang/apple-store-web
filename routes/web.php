@@ -114,3 +114,12 @@ Route::post('/login',
 
 Route::get('/logout',
     action : [LoginController::class,'getLogout'])->name('logout');
+    
+
+//cart order controller
+Route::get('/checkout',
+    action : [CheckoutController::class,'index'])->name('checkout');
+
+Route::post('/order',
+    action : [CheckoutController::class,'addOrder'])->name('addOrder');
+
