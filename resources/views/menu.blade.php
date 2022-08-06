@@ -56,7 +56,7 @@
                     <ul>
                         <li @if(Route::current()->getName() === 'home') class="active" @endif><a href="{{route('home')}}">Trang chủ</a></li>
                         <li @if(Route::current()->getName() === 'shop') class="active" @endif><a href="{{route('shop')}}">Sản phẩm</a></li>
-{{--                        <li @if(Route::current()->getName() === 'contacts') class="active" @endif><a href="{{route('contacts')}}">Liên lạc</a></li>--}}
+                        <li @if(Route::current()->getName() === 'contacts') class="active" @endif><a href="{{route('contacts')}}">Liên lạc</a></li>
 {{--                        <li><a href="#">Mua sắm</a>--}}
 {{--                            <ul class="dropdown">--}}
 {{--                                <li><a href="{{asset('/cart')}}">Giỏ hàng</a></li>--}}
