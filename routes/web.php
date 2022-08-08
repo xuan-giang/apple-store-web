@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductDetailsController;
@@ -117,7 +118,7 @@ Route::post('/login',
 
 Route::get('/logout',
     action : [LoginController::class,'getLogout'])->name('logout');
-    
+
 
 //cart order controller
 Route::get('/checkout',
