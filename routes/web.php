@@ -3,10 +3,12 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,3 +94,36 @@ Route::get('/admin-update-status-bill',
 
 Route::get('/details',
     action : [ProductDetailsController::class,'index'])->name('details');
+
+Route::get('/contacts',
+    action : [ContactsController::class,'index'])->name('contacts');
+
+//Login
+
+Route::get('/login',
+    action : [LoginController::class,'getLogin']
+)->name('login');
+
+Route::get('/register',
+    action : [LoginController::class,'showRegister']
+);
+
+Route::post('/register',
+    action : [LoginController::class,'register']
+)->name('register');
+
+Route::post('/login',
+    action : [LoginController::class,'postLogin']
+)->name('postLogin');
+
+Route::get('/logout',
+    action : [LoginController::class,'getLogout'])->name('logout');
+
+
+//cart order controller
+Route::get('/checkout',
+    action : [CheckoutController::class,'index'])->name('checkout');
+
+Route::post('/order',
+    action : [CheckoutController::class,'addOrder'])->name('addOrder');
+
