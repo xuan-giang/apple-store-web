@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\BillManagerController;
+use App\Http\Controllers\admin\CategoryManagerController;
 use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -85,12 +87,12 @@ Route::post('/post-log-admin',
 
 // Bill
 Route::get('/admin-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'index'])->name('admin-bill');
+    action : [BillManagerController::class,'index'])->name('admin-bill');
 Route::get('/admin-detail-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'view'])->name('admin-detail-bill');
+    action : [BillManagerController::class,'view'])->name('admin-detail-bill');
 
 Route::get('/admin-update-status-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'update_status'])->name('admin-update-status-bill');
+    action : [BillManagerController::class,'update_status'])->name('admin-update-status-bill');
 
 Route::get('/details',
     action : [ProductDetailsController::class,'index'])->name('details');
@@ -98,6 +100,7 @@ Route::get('/details',
 Route::get('/contacts',
     action : [ContactsController::class,'index'])->name('contacts');
 
+Route::get('/bill-details/pdf', [BillManagerController::class, 'createPDF'])->name('admin-export-bill');
 //Login
 
 Route::get('/login',
@@ -127,3 +130,22 @@ Route::get('/checkout',
 Route::post('/order',
     action : [CheckoutController::class,'addOrder'])->name('addOrder');
 
+// Category manager
+
+Route::get('/admin-category',
+    action : [CategoryManagerController::class,'index'])->name('admin-category');
+
+Route::get('/admin-category-create',
+    action : [CategoryManagerController::class,'create'])->name('admin-category-create');
+
+Route::post('/admin-category-store',
+    action : [CategoryManagerController::class,'store'])->name('admin-category-store');
+
+Route::get('/admin-category-delete',
+    action : [CategoryManagerController::class,'delete'])->name('admin-category-delete');
+
+Route::post('/admin-category-update',
+    action : [CategoryManagerController::class,'update'])->name('admin-category-update');
+
+Route::get('/admin-category-edit',
+    action : [CategoryManagerController::class,'edit'])->name('admin-category-edit');
