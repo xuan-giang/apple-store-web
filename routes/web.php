@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\BillManagerController;
 use App\Http\Controllers\admin\CategoryManagerController;
 use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
@@ -86,12 +87,12 @@ Route::post('/post-log-admin',
 
 // Bill
 Route::get('/admin-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'index'])->name('admin-bill');
+    action : [BillManagerController::class,'index'])->name('admin-bill');
 Route::get('/admin-detail-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'view'])->name('admin-detail-bill');
+    action : [BillManagerController::class,'view'])->name('admin-detail-bill');
 
 Route::get('/admin-update-status-bill',
-    action : [\App\Http\Controllers\admin\BillManagerController::class,'update_status'])->name('admin-update-status-bill');
+    action : [BillManagerController::class,'update_status'])->name('admin-update-status-bill');
 
 Route::get('/details',
     action : [ProductDetailsController::class,'index'])->name('details');
@@ -99,6 +100,7 @@ Route::get('/details',
 Route::get('/contacts',
     action : [ContactsController::class,'index'])->name('contacts');
 
+Route::get('/bill-details/pdf', [BillManagerController::class, 'createPDF'])->name('admin-export-bill');
 //Login
 
 Route::get('/login',
