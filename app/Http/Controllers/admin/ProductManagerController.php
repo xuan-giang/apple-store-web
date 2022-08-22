@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImages;
 use App\Models\ProductInformation;
@@ -33,10 +34,22 @@ class ProductManagerController extends Controller
         ]);
     }
 
+    public function updateQuantityCategory($idCategory, $process)
+    {
+        $data = Category::find($idCategory);
+        if($process == "CREATE"){
+            $data->quantity = $data->quantity + 1;
+        }
+
+        if($process == "DELETE"){
+            $data->quantity = $data->quantity - 1;
+        }
+
+        $data->save();
+    }
 
     public function store(Request $request)
     {
-
 
         if($request->file('image')){
             $request->validate([
@@ -45,6 +58,7 @@ class ProductManagerController extends Controller
                 'image_2'  =>'mimes:jpeg,bmp,png',
                 'image_3'  =>'mimes:jpeg,bmp,png',
             ]);
+
             $product = Product::create($request->all());
 
             $file_main= $request->file('image');
@@ -76,10 +90,9 @@ class ProductManagerController extends Controller
             $storedPath   = $file_main-> move(public_path('img/image-product'), $filename);
             Product::where('id', $product->id)->update(['image' => $filename]);
             ProductInformation::create(array_merge($request->all(),['id_product' => $product->id]));
-
+            $this->updateQuantityCategory($request->type, "CREATE");
             return  redirect('admin-product');
         }
-
 
     }
 
@@ -88,11 +101,13 @@ class ProductManagerController extends Controller
         if($request->has('id')){
             $id = $request->input('id');
             $product = Product::where('id',$id)->first();
+            $this->updateQuantityCategory($request->type, "DELETE");
             $product_images = ProductImages::where('id_product',$id)->get();
             //dd($product_images['1']);
             //dd($product->delete());
             if($product != null){
                 $image_path_main = $product->get_url_image();
+
                 if($product->delete()){
 
                     //xóa file ảnh phụ
