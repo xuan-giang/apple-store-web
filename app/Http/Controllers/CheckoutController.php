@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OderMail;
 use App\Models\Product;
 use App\Models\OrderList;
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -87,8 +90,14 @@ class CheckoutController extends Controller
             if(!empty($_SESSION['cart'])){
                 unset( $_SESSION['cart']);
             }
-
+        $str ="SELECT * FROM order_detail INNER JOIN product ON  product.id = id_product where id_order = ".$order->id;
+        $list_products = DB::SELECT($str);
+            $this->sendOrderConfirmationEmail($order, $list_products);
             return redirect()->route('home');
+    }
+
+    public function sendOrderConfirmationEmail($order, $products_in_cart){
+        Mail::to($order->email)->send(new OderMail($order, $products_in_cart));
     }
 
     public function updateProduct(){
