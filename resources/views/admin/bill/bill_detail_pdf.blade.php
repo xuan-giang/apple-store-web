@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Larave Generate Invoice PDF - Nicesnippest.com</title>
+    <title>Bill Information</title>
 
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
