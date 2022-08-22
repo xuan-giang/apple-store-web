@@ -1,5 +1,6 @@
 @extends('admin.master')
 
+
 @section('content')
 
     <!-- Main Sidebar Container -->
@@ -32,6 +33,7 @@
                     font-weight: bold;
                 }
             </style>
+
             <table  >
                 <tr ><h2 style="font-weight: bold">Thông tin hóa đơn</h2></tr>
                 <tr>
@@ -101,6 +103,12 @@
                             </thead>
                             <tbody>
                             <?php $stt=1 ?>
+                            @php
+                                $subTotal   = 0;
+                                $taxRate    = 18;
+                                $taxPayment = 0;
+                                $totalPayment = 0;
+                            @endphp
                             @foreach($list_products as $product)
 
 
@@ -127,19 +135,41 @@
 
                                     <td align="center">
                                         <div style="margin-left:10px;margin-right:10px;" ><span class="span-quantity">{{$product->qty * $product->price}}</span></div>
+                                        <div style="display: none">{{$subTotal += ($product->qty * $product->price)}}</div>
                                     </td>
 
                                 </tr>
                             @endforeach
+                            <div style="display: none">{{$subTotal += ($product->qty * $product->price)}}</div>
+                            <div style="display: none">{{$taxPayment = $subTotal * $taxRate / 100}}</div>
+                            <div style="display: none">{{$totalPayment = $subTotal + $taxPayment}}</div>
 
-
+                            <tr>
+                                <td colspan="7">
+                                    <div class="total-part">
+                                        <div class="total-left w-85 float-left" align="right">
+                                            <p>Sub Total:  </p>
+                                            <p>Tax ({{$taxRate}}%):  </p>
+                                            <p>Total Payable:   </p>
+                                        </div>
+                                        <div class="total-right w-15 float-left text-bold" align="right">
+                                            <p>{{$subTotal}}</p>
+                                            <p>{{$taxPayment}}</p>
+                                            <p>{{$totalPayment}}</p>
+                                        </div>
+                                        <div style="clear: both;"></div>
+                                    </div>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
 
                         <button >
-                           <input type="submit">
+                           <input class="btn btn-outline-primary btn-sm" type="submit">
                         </button>
-
+                        <a href="{{route('admin-export-bill',parameters:['id'=>$bill->id_order])}}" class="btn btn-outline-info btn-sm">
+                            <span class="glyphicon glyphicon-export"></span> Export bill
+                        </a>
                     </div>
 
 
