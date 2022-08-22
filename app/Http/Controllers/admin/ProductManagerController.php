@@ -36,6 +36,8 @@ class ProductManagerController extends Controller
 
     public function updateQuantityCategory($idCategory, $process)
     {
+        if($idCategory == null)
+            return;
         $data = Category::find($idCategory);
         if($process == "CREATE"){
             $data->quantity = $data->quantity + 1;
