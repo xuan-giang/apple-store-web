@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\CategoryManagerController;
 use App\Http\Controllers\admin\ProductManagerController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -127,3 +128,22 @@ Route::get('/checkout',
 Route::post('/order',
     action : [CheckoutController::class,'addOrder'])->name('addOrder');
 
+// Category manager
+
+Route::get('/admin-category',
+    action : [CategoryManagerController::class,'index'])->name('admin-category');
+
+Route::get('/admin-category-create',
+    action : [CategoryManagerController::class,'create'])->name('admin-category-create');
+
+Route::post('/admin-category-store',
+    action : [CategoryManagerController::class,'store'])->name('admin-category-store');
+
+Route::get('/admin-category-delete',
+    action : [CategoryManagerController::class,'delete'])->name('admin-category-delete');
+
+Route::post('/admin-category-update',
+    action : [CategoryManagerController::class,'update'])->name('admin-category-update');
+
+Route::get('/admin-category-edit',
+    action : [CategoryManagerController::class,'edit'])->name('admin-category-edit');
