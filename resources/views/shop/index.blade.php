@@ -136,18 +136,18 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Hiển thị 1-12 trong số 126 kết quả</p>
+                                    <p>Hiển thị {{sizeof($products)}} trong số {{$total_product}} kết quả</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__right">
+                                {{--<div class="shop__product__option__right">
                                     <p>Sắp xếp theo giá:</p>
                                     <select>
                                         <option value="">Thấp đến cao</option>
                                         <option value="">$0 - $55</option>
                                         <option value="">$55 - $100</option>
                                     </select>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                     </div>
