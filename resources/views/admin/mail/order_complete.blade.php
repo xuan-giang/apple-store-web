@@ -2794,7 +2794,7 @@
                                 margin: 0;
                               "
                                             >
-                                                You can find more amazing products on our website.
+                                                Cảm ơn bạn đã mua sắm tại Apple Store.
                                             </p>
                                         </div>
                                     </div>
@@ -2850,7 +2850,7 @@
                                   word-break: break-word;
                                   mso-line-height-alt: 32px;
                                 "
-                                                >View More</span
+                                                >Mua sắm thêm</span
                                                 ></span
                                             ></a
                                         >

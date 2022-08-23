@@ -90,25 +90,43 @@
                                 <td>{{$item->created_at}}</td>
                                 <td>
                                     @if($item->status === 3)
-                                        <div>{{"Đã thanh toán"}}</div>
+                                        <div style="color: #006418; font-weight: bold">{{"Đã thanh toán"}}</div>
                                     @else
-                                    <button class="btn btn-info btn-sm" href="">
-                                        <i class="fas fa-pencil-alt">
-                                            <a href="{{route('admin-update-status-bill',parameters:['id'=>$item->id_order, 'status' =>$item->status])}}"class="btn btn-">
-                                                @if($item->status === 1) {{"Xác nhận"}} @elseif($item->status === 2) {{"Hoàn thành"}} @endif
-                                            </a>
 
-                                        </i>
 
-                                    </button>
+                                        @if($item->status === 1)
+                                            <button class="btn btn-warning btn-sm" href="">
+                                                <i class="fas fa-pencil-alt">
+                                                    <a href="{{route('admin-update-status-bill',parameters:['id'=>$item->id_order, 'status' =>$item->status])}}"class="btn btn-">
+
+                                                            {{"Xác nhận"}}
+
+                                                    </a>
+
+                                                </i>
+
+                                            </button>
+                                        @elseif($item->status === 2)
+                                            <button class="btn btn-success btn-sm" >
+                                                <i class="fas fa-pencil-alt">
+                                                    <a href="{{route('admin-update-status-bill',parameters:['id'=>$item->id_order, 'status' =>$item->status])}}" class="btn ">
+
+                                                        {{"Hoàn thành"}}
+
+                                                    </a>
+
+                                                </i>
+
+                                            </button>
+                                        @endif
                                     @endif
 
                                 </td>
 
 
-                                <td>  <button   class=" btn btn-danger btn-sm">
+                                <td>  <button   class=" btn btn-outline-info btn-sm">
                                         <i class="fas fa-view"></i>
-                                        <a href="{{route('admin-detail-bill',parameters:['id'=>$item->id_order])}}"class="btn btn-">View</a>
+                                        <a href="{{route('admin-detail-bill',parameters:['id'=>$item->id_order])}}" class="btn ">View</a>
                                     </button></td>
                                 <td>
                                     <button data-id=""  class="btn_click_delete btn btn-danger btn-sm">
