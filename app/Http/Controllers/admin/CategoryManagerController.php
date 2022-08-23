@@ -44,6 +44,9 @@ class CategoryManagerController
             if ($category != null) {
 
                 if ($category->quantity > 0) {
+                    echo '<script language="javascript">';
+                    echo 'alert(Không thể xoá do danh mục này tồn tại sản phẩm)';
+                    echo '</script>';
                     return redirect('admin-category')->with('failed', 'Không thể xoá do danh mục này tồn tại sản phẩm');
 
                 } else {

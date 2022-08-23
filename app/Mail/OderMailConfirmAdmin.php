@@ -10,11 +10,11 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
 
-class OderMail extends Mailable
+class OderMailConfirmAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public OrderList $bill;
+    public OrderList $order;
 
     public $list_products;
     /**
@@ -24,7 +24,7 @@ class OderMail extends Mailable
      */
     public function __construct($orderList, $list_products1)
     {
-        $this->bill = $orderList;
+        $this->order = $orderList;
         $this->list_products = $list_products1;
     }
 
@@ -35,6 +35,7 @@ class OderMail extends Mailable
      */
     public function build()
     {
-        return $this->subject("Thông báo đặt hàng thành công")->view('admin.mail.order_confirm');
+        $customSubject = "Đơn hàng #".$this->order->id_order." của bạn đang được giao";
+        return $this->subject($customSubject)->view('admin.mail.oder_confirm_admin');
     }
 }

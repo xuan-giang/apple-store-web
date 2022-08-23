@@ -74,11 +74,19 @@
                                         </i>
                                         Edit
                                     </a>
-                                    <button data-id="{{$category->id}}"  class="btn_click_delete btn btn-danger btn-sm">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </button>
+                                    @if($category->quantity > 0)
+                                        <button onclick="canNotDelete();"  class=" btn btn-danger btn-sm">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </button>
+                                    @else
+                                        <button data-id="{{$category->id}}"  class="btn_click_delete btn btn-danger btn-sm">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </button>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -104,6 +112,10 @@
     <script src="{{asset("js/main.js")}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        function canNotDelete(){
+            alert("Không thể xoá do danh mục này tồn tại sản phẩm");
+        }
+
         $(document).ready(function(){
 
             $(".btn_click_delete").click(function() {
