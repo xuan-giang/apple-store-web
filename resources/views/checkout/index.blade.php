@@ -9,9 +9,10 @@
                     <div class="breadcrumb__text">
                         <h4>Check Out</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <a href="./shop.html">Shop</a>
-                            <span>Check Out</span>
+                            <a href="{{route("home")}}">Trang chủ</a>
+                            <a href="{{route("shop")}}">Của hàng</a>
+                            <a href="{{route("cart")}}">Của hàng</a>
+                            <span>Đặt hàng</span>
                         </div>
                     </div>
                 </div>
@@ -28,29 +29,29 @@
                     @csrf
                     <div class="row" >
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code">!!! Special price for each coupon code !!!</h6>
-                            <h6 class="checkout__title">Billing Details</h6>
+                            <h6 class="coupon__code">Nhập đầy đủ thông tin giúp dễ dàng giao hàng cho bạn hơn !</h6>
+                            <h6 class="checkout__title">Chi tiết đơn hàng</h6>
                             <div class="checkout__input">
-                                <p>Fullname<span>*</span></p>
-                                <input type="text" name="fullname" placeholder="Fullname" class="checkout__input__add">
+                                <p>Tên đầy đủ<span>*</span></p>
+                                <input type="text" name="fullname" placeholder="Tên đầy đủ" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
-                                <p>Address<span>*</span></p>
-                                <input type="text" name="address" placeholder="Address" class="checkout__input__add">
+                                <p>Địa chỉ<span>*</span></p>
+                                <input type="text" name="address" placeholder="Địa chỉ" class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
-                                <p>Phone<span>*</span></p>
+                                <p>Số điện thoại<span>*</span></p>
                                 <input type="text" name="phone" placeholder="0123..." class="checkout__input__add">
                             </div>
                             <div class="checkout__input">
-                                <p>Note<span>*</span></p>
-                                <textarea class="checkout__input__add form-control" name="note" placeholder="something here..." aria-label="With textarea"></textarea>
+                                <p>Ghi chú<span>*</span></p>
+                                <textarea class="checkout__input__add form-control" name="note" placeholder="..." aria-label="With textarea"></textarea>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
-                                <h4 class="order__title">Your order</h4>
-                                <div class="checkout__order__products">Product <span>Total</span></div>
+                                <h4 class="order__title">Bạn đã chọn</h4>
+                                <div class="checkout__order__products">Sản phẩm <span>Tất cả</span></div>
                                 <ul class="checkout__total__products">
                                     <?php $total=0 ?>
                                     @foreach($products_in_cart as $product)
@@ -64,11 +65,11 @@
                                     @endforeach
                                 </ul>
                                 <ul class="checkout__total__all">
-                                    <li>Subtotal <span>$ <?php echo $total ?></span></li>
-                                    <li>Total <span>$ <?php echo $total ?></span></li>
+                                    <li>Tổng <span>$ <?php echo $total ?></span></li>
+                                    <li>Tính tiền <span>$ <?php echo $total ?></span></li>
                                 </ul>
-                                <h5>Payment Methods</h5>
-                                <p>Choose a transactions</p>
+                                <h5>Phương thúc thanh toán</h5>
+                                <p>Chọn một</p>
                                 <div class="checkout__input__checkbox">
                                     <div class="">
                                         <input type="radio" class="mr-3" value="Visa" name="paymentMethod" id="visa">
@@ -80,14 +81,14 @@
                                     </div>
                                     <div class="">
                                         <input checked type="radio" class="mr-3" value="cashOnDelivery"  name="paymentMethod" id="Cash On Delivery">
-                                        Cash On Delivery
+                                        Giao hàng thanh toán
                                     </div>
                                 </div>
                                 <br>
                                 @if (Illuminate\Support\Facades\Auth::check() === true)
-                                    <button type="submit" class="site-btn">PLACE ORDER</button>
+                                    <button type="submit" class="site-btn">Đặt ngay</button>
                                 @else
-                                    <a class="site-btn text-center" href="{{asset('../login')}}">You need to sign in</a>
+                                    <a class="site-btn text-center" href="{{asset('../login')}}">Bạn phải đăng nhập để đặt hàng</a>
                                 @endif
                             </div>
                         </div>

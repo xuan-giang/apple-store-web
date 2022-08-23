@@ -18,42 +18,42 @@
                     <div class="form sign-up">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" name="username" id="name" placeholder="username" ">
+                            <input type="text" name="username" id="name" placeholder="Tên đăng nhập" >
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" name="fullname" id="name" placeholder="fullname" ">
+                            <input type="text" name="fullname" id="name" placeholder="Họ và tên" >
                         </div>
                         <div class="input-group">
                             <i class='bx bx-mail-send'></i>
-                            <input type="email" name="email" id="email" placeholder="email" ">
+                            <input type="email" name="email" id="email" placeholder="email" >
 
                         </div>
                         <p style="text-align:left;" id="ckemail"></p>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" name="password" id="pswd1" placeholder="password" ">
+                            <input type="password" name="password" id="pswd1" placeholder="Mật khẩu" >
                         </div>
                         <p style="text-align:left;" id="ckpass"></p>
                         <div class="input-group">
                             <i class='bx bxs-lock' ></i>
-                            <input type="password" name="confirmPassword" id="pswd2" placeholder="Confirm Password" ">
+                            <input type="password" name="confirmPassword" id="pswd2" placeholder="Xác nhận mật khẩu" >
 
                         </div>
                         <p style="text-align:left;" id="ckpass2"></p>
                         <button onclick="match()">
-                            Sign up
+                            Đăng kí
                         </button>
                         <p>
                             <span>
-                                Already have an account?
+                                Tạo tài khoản mới?
                             </span>
                             <b onclick="toggle()" class="pointer">
-                                Sign in here
+                                Đăng nhập
                             </b>
                         </p>
                         <p>
-                            <a href="{{asset('../')}}">Back to Home</a>
+                            <a href="{{route("home")}}">Về trang chủ</a>
                         </p>
                     </div>
                 </div>
@@ -83,12 +83,12 @@
                     <div class="form sign-in">
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" id="namein" name="usernamein" placeholder="username">
+                            <input type="text" id="namein" name="usernamein" placeholder="Tên đăng nhập">
                         </div>
                         <p style="text-align:left;" id="cknamein"></p>
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
-                            <input type="password" id="passin" name="passwordin" placeholder="password">
+                            <input type="password" id="passin" name="passwordin" placeholder="Mật khẩu">
 
                         </div>
                         @if(isset($check))
@@ -98,24 +98,24 @@
                             @endif
                         <p style="text-align:left;" id="ckpassin"></p>
                         <button>
-                            Sign in
+                            Đăng nhập
                         </button>
                         <p>
                             <b>
-                                Forgot password?
+                                Quên mật khẩu?
                             </b>
 
                         </p>
                         <p>
                             <span>
-                                Don't have an account?
+                                Bạn chưa có tài khoản?
                             </span>
                             <b onclick="toggle()" class="pointer">
-                                Sign up here
+                                Đăng kí
                             </b>
                         </p>
                         <p>
-                        <a href="{{asset('../')}}">Back to Home</a>
+                        <a href="{{route("home")}}">Về trang chủ</a>
                         </p>
                     </div>
                 </div>
@@ -161,10 +161,10 @@
                 </div>
                 <div class="text sign-up">
                     <h2>
-                        Join with us
+                       Đăng kí ngay
                     </h2>
                     <p>
-                        Become a member to get the best deals !!!
+                        Để nhận được những ưu đãi tốt nhất !!!
                     </p>
                 </div>
             </div>
