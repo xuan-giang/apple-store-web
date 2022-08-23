@@ -41,7 +41,7 @@
     <tr style="vertical-align: top" valign="top">
         <td style="word-break: break-word; vertical-align: top" valign="top">
 
-            <div style="background-color: #ff001e">
+            <div style="background-color: #02e21a">
                 <div
                     class="block-grid"
                     style="
@@ -443,7 +443,7 @@
                               "
                                             >
                               <span style="font-size: 30px"
-                              >Bạn vừa đặt hàng thành công!</span
+                              >Đơn hàng của bạn đã hoàn thành!</span
                               >
                                             </p>
                                         </div>
@@ -1214,10 +1214,10 @@
                 $totalPayment = 0;
             @endphp
             @foreach($list_products as $product)
-                <div style="background-color: transparent">
-                    <div
-                        class="block-grid three-up no-stack"
-                        style="
+            <div style="background-color: transparent">
+                <div
+                    class="block-grid three-up no-stack"
+                    style="
                   min-width: 320px;
                   max-width: 680px;
                   overflow-wrap: break-word;
@@ -1226,44 +1226,44 @@
                   margin: 0 auto;
                   background-color: transparent;
                 "
-                    >
-                        <div
-                            style="
+                >
+                    <div
+                        style="
                     border-collapse: collapse;
                     display: table;
                     width: 100%;
                     background-color: transparent;
                   "
-                        >
-                            <!--[if (mso)|(IE)]>
-                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                   style="background-color:transparent;">
+                    >
+                        <!--[if (mso)|(IE)]>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                               style="background-color:transparent;">
+                            <tr>
+                                <td align="center">
+                                    <table cellpadding="0" cellspacing="0" border="0" style="width:680px">
+                                        <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
+                        <!--[if (mso)|(IE)]>
+                        <td align="center" width="226"
+                            style="background-color:transparent;width:226px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                            valign="top">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
-                                    <td align="center">
-                                        <table cellpadding="0" cellspacing="0" border="0" style="width:680px">
-                                            <tr class="layout-full-width" style="background-color:transparent"><![endif]-->
-                            <!--[if (mso)|(IE)]>
-                            <td align="center" width="226"
-                                style="background-color:transparent;width:226px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                                valign="top">
-                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <td style="padding-right: 5px; padding-left: 5px; padding-top:5px; padding-bottom:5px;">
-                            <![endif]-->
-                            <div
-                                class="col num4"
-                                style="
+                                    <td style="padding-right: 5px; padding-left: 5px; padding-top:5px; padding-bottom:5px;">
+                        <![endif]-->
+                        <div
+                            class="col num4"
+                            style="
                       display: table-cell;
                       vertical-align: top;
                       max-width: 320px;
                       min-width: 224px;
                       width: 226px;
                     "
-                            >
-                                <div class="col_cont" style="width: 100% !important">
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    <div
-                                        style="
+                        >
+                            <div class="col_cont" style="width: 100% !important">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div
+                                    style="
                           border-top: 0px solid transparent;
                           border-left: 0px solid transparent;
                           border-bottom: 0px solid transparent;
@@ -1273,15 +1273,15 @@
                           padding-right: 5px;
                           padding-left: 5px;
                         "
-                                    >
-                                        <!--<![endif]-->
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td style="padding-right: 0px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
-                                        <![endif]-->
-                                        <div
-                                            style="
+                                >
+                                    <!--<![endif]-->
+                                    <!--[if mso]>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="padding-right: 0px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
+                                    <![endif]-->
+                                    <div
+                                        style="
                             color: #393d47;
                             font-family: Nunito, Arial, Helvetica Neue,
                               Helvetica, sans-serif;
@@ -1291,10 +1291,10 @@
                             padding-bottom: 10px;
                             padding-left: 10px;
                           "
-                                        >
-                                            <div
-                                                class="txtTinyMce-wrapper"
-                                                style="
+                                    >
+                                        <div
+                                            class="txtTinyMce-wrapper"
+                                            style="
                               line-height: 1.2;
                               font-size: 12px;
                               color: #393d47;
@@ -1302,49 +1302,49 @@
                                 Helvetica, sans-serif;
                               mso-line-height-alt: 14px;
                             "
-                                            >
-                                                <p
-                                                    style="
+                                        >
+                                            <p
+                                                style="
                                 font-size: 14px;
                                 line-height: 1.2;
                                 word-break: break-word;
                                 mso-line-height-alt: 17px;
                                 margin: 0;
                               "
-                                                >
-                                                    {{$product->name}}
-                                                </p>
-                                            </div>
+                                            >
+                                                {{$product->name}}
+                                            </p>
                                         </div>
-                                        <!--[if mso]></td></tr></table><![endif]-->
-                                        <!--[if (!mso)&(!IE)]><!-->
                                     </div>
-                                    <!--<![endif]-->
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if (!mso)&(!IE)]><!-->
                                 </div>
+                                <!--<![endif]-->
                             </div>
-                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                            <!--[if (mso)|(IE)]></td>
-                            <td align="center" width="226"
-                                style="background-color:transparent;width:226px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
-                                valign="top">
-                                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                    <tr>
-                                        <td style="padding-right: 5px; padding-left: 5px; padding-top:5px; padding-bottom:5px;">
-                            <![endif]-->
-                            <div
-                                class="col num4"
-                                style="
+                        </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td>
+                        <td align="center" width="226"
+                            style="background-color:transparent;width:226px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;"
+                            valign="top">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="padding-right: 5px; padding-left: 5px; padding-top:5px; padding-bottom:5px;">
+                        <![endif]-->
+                        <div
+                            class="col num4"
+                            style="
                       display: table-cell;
                       vertical-align: top;
                       max-width: 320px;
                       min-width: 224px;
                       width: 226px;
                     "
-                            >
-                                <div class="col_cont" style="width: 100% !important">
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    <div
-                                        style="
+                        >
+                            <div class="col_cont" style="width: 100% !important">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div
+                                    style="
                           border-top: 0px solid transparent;
                           border-left: 0px solid transparent;
                           border-bottom: 0px solid transparent;
@@ -1354,15 +1354,15 @@
                           padding-right: 5px;
                           padding-left: 5px;
                         "
-                                    >
-                                        <!--<![endif]-->
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td style="padding-right: 5px; padding-left: 5px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
-                                        <![endif]-->
-                                        <div
-                                            style="
+                                >
+                                    <!--<![endif]-->
+                                    <!--[if mso]>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="padding-right: 5px; padding-left: 5px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
+                                    <![endif]-->
+                                    <div
+                                        style="
                             color: #393d47;
                             font-family: Nunito, Arial, Helvetica Neue,
                               Helvetica, sans-serif;
@@ -1372,10 +1372,10 @@
                             padding-bottom: 10px;
                             padding-left: 5px;
                           "
-                                        >
-                                            <div
-                                                class="txtTinyMce-wrapper"
-                                                style="
+                                    >
+                                        <div
+                                            class="txtTinyMce-wrapper"
+                                            style="
                               line-height: 1.2;
                               font-size: 12px;
                               color: #393d47;
@@ -1383,9 +1383,9 @@
                                 Helvetica, sans-serif;
                               mso-line-height-alt: 14px;
                             "
-                                            >
-                                                <p
-                                                    style="
+                                        >
+                                            <p
+                                                style="
                                 font-size: 14px;
                                 line-height: 1.2;
                                 word-break: break-word;
@@ -1393,31 +1393,31 @@
                                 mso-line-height-alt: 17px;
                                 margin: 0;
                               "
-                                                >
-                                                    {{$product->qty}}
-                                                </p>
-                                            </div>
+                                            >
+                                                {{$product->qty}}
+                                            </p>
                                         </div>
-
                                     </div>
 
                                 </div>
-                            </div>
 
-                            <div
-                                class="col num4"
-                                style="
+                            </div>
+                        </div>
+
+                        <div
+                            class="col num4"
+                            style="
                       display: table-cell;
                       vertical-align: top;
                       max-width: 320px;
                       min-width: 224px;
                       width: 226px;
                     "
-                            >
-                                <div class="col_cont" style="width: 100% !important">
-                                    <!--[if (!mso)&(!IE)]><!-->
-                                    <div
-                                        style="
+                        >
+                            <div class="col_cont" style="width: 100% !important">
+                                <!--[if (!mso)&(!IE)]><!-->
+                                <div
+                                    style="
                           border-top: 0px solid transparent;
                           border-left: 0px solid transparent;
                           border-bottom: 0px solid transparent;
@@ -1427,15 +1427,15 @@
                           padding-right: 5px;
                           padding-left: 5px;
                         "
-                                    >
-                                        <!--<![endif]-->
-                                        <!--[if mso]>
-                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                            <tr>
-                                                <td style="padding-right: 10px; padding-left: 0px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
-                                        <![endif]-->
-                                        <div
-                                            style="
+                                >
+                                    <!--<![endif]-->
+                                    <!--[if mso]>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="padding-right: 10px; padding-left: 0px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif">
+                                    <![endif]-->
+                                    <div
+                                        style="
                             color: #393d47;
                             font-family: Nunito, Arial, Helvetica Neue,
                               Helvetica, sans-serif;
@@ -1445,10 +1445,10 @@
                             padding-bottom: 10px;
                             padding-left: 0px;
                           "
-                                        >
-                                            <div
-                                                class="txtTinyMce-wrapper"
-                                                style="
+                                    >
+                                        <div
+                                            class="txtTinyMce-wrapper"
+                                            style="
                               line-height: 1.2;
                               font-size: 12px;
                               color: #393d47;
@@ -1456,9 +1456,9 @@
                                 Helvetica, sans-serif;
                               mso-line-height-alt: 14px;
                             "
-                                            >
-                                                <p
-                                                    style="
+                                        >
+                                            <p
+                                                style="
                                 font-size: 14px;
                                 line-height: 1.2;
                                 word-break: break-word;
@@ -1466,23 +1466,23 @@
                                 mso-line-height-alt: 17px;
                                 margin: 0;
                               "
-                                                >
-                                                    $ {{$product->qty * $product->price}}
-                                                </p>
-                                                <div style="display: none">{{$subTotal += ($product->qty * $product->price)}}</div>
-                                            </div>
+                                            >
+                                                $ {{$product->qty * $product->price}}
+                                            </p>
+                                            <div style="display: none">{{$subTotal += ($product->qty * $product->price)}}</div>
                                         </div>
-                                        <!--[if mso]></td></tr></table><![endif]-->
-                                        <!--[if (!mso)&(!IE)]><!-->
                                     </div>
-                                    <!--<![endif]-->
+                                    <!--[if mso]></td></tr></table><![endif]-->
+                                    <!--[if (!mso)&(!IE)]><!-->
                                 </div>
+                                <!--<![endif]-->
                             </div>
-                            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
-                            <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
                         </div>
+                        <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+                        <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
                     </div>
                 </div>
+            </div>
             @endforeach
             <div style="display: none">{{$taxPayment = $subTotal * $taxRate / 100}}</div>
             <div style="display: none">{{$totalPayment = $subTotal + $taxPayment}}</div>
@@ -2794,7 +2794,7 @@
                                 margin: 0;
                               "
                                             >
-                                                Vui lòng chờ đợi chúng tôi xác nhận và giao hàng tới bạn!
+                                                You can find more amazing products on our website.
                                             </p>
                                         </div>
                                     </div>
@@ -2850,7 +2850,7 @@
                                   word-break: break-word;
                                   mso-line-height-alt: 32px;
                                 "
-                                                >Tiếp tục mua</span
+                                                >View More</span
                                                 ></span
                                             ></a
                                         >

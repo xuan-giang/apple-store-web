@@ -34,8 +34,6 @@
 
                     <div class="card-tools">
 
-
-
                         <div class="input-group input-group-sm" style="width: 250px;">
 
                             <div  style="margin-right:50px;">
@@ -85,11 +83,19 @@
                                         </i>
                                         Edit
                                     </a>
-                                    <button data-id="{{$product->id}}"  class="btn_click_delete btn btn-danger btn-sm">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </button>
+                                    @if($product->sold > 0)
+                                        <button onclick="canNotDelete();"  class=" btn btn-danger btn-sm">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </button>
+                                    @else
+                                        <button data-id="{{$product->id}}"  class="btn_click_delete btn btn-danger btn-sm">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </button>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -115,6 +121,10 @@
     <script src="{{asset("js/main.js")}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        function canNotDelete(){
+            alert("Không thể xoá do só lượng sản phẩm lớn hơn 0");
+        }
+
         $(document).ready(function(){
 
             $(".btn_click_delete").click(function() {

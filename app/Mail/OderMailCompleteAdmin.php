@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
 
-class OderMail extends Mailable
+class OderMailCompleteAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -35,6 +35,6 @@ class OderMail extends Mailable
      */
     public function build()
     {
-        return $this->subject("Thông báo đặt hàng thành công")->view('admin.mail.order_confirm');
+        return $this->subject("Thông báo giao hàng thành công - đơn hàng #".$this->bill->id_order)->view('admin.mail.order_complete');
     }
 }
