@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductDetailsController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactsController;
@@ -149,3 +150,14 @@ Route::post('/admin-category-update',
 
 Route::get('/admin-category-edit',
     action : [CategoryManagerController::class,'edit'])->name('admin-category-edit');
+
+
+//order list
+Route::get('/order',
+    action : [OrderController::class,'index'])->name('order-list');
+
+Route::get('/order-bill-detail',
+    action : [OrderController::class,'view'])->name('order-bill-detail');
+
+Route::get('/order-bill-destroy',
+    action : [OrderController::class,'destroy'])->name('order-bill-destroy');

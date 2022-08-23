@@ -57,15 +57,15 @@
                         <li @if(Route::current()->getName() === 'home') class="active" @endif><a href="{{route('home')}}">Trang chủ</a></li>
                         <li @if(Route::current()->getName() === 'shop') class="active" @endif><a href="{{route('shop')}}">Sản phẩm</a></li>
                         <li @if(Route::current()->getName() === 'contacts') class="active" @endif><a href="{{route('contacts')}}">Liên lạc</a></li>
-{{--                        <li><a href="#">Mua sắm</a>--}}
-{{--                            <ul class="dropdown">--}}
-{{--                                <li><a href="{{asset('/cart')}}">Giỏ hàng</a></li>--}}
-{{--                                @if (Illuminate\Support\Facades\Auth::check() === true)--}}
-{{--                                <li><a href="{{route('orderList')}}">Xem đơn đặt hàng</a></li>--}}
-{{--                                @else--}}
-{{--                                @endif--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
+                        <li><a href="#">Mua sắm</a>
+                            <ul class="dropdown">
+                                <li><a href="{{route('cart')}}">Giỏ hàng</a></li>
+                                @if (Illuminate\Support\Facades\Auth::check() === true)
+                                <li><a href="{{route('order-list')}}">Xem đơn đặt hàng</a></li>
+                                @else
+                                @endif
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>

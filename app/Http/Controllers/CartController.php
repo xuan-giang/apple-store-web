@@ -40,12 +40,12 @@ class CartController extends Controller
         $total = 0;
         foreach ($cart as $id => $quantity){
             $product = Product::query()->where('id', $id)->first();
-            if($product !== null || $quantity >0){
+            if($product !== null && $quantity >0){
                 $total += $product->price * $quantity;
             }
         }
         return $total;
-        echo $total;
+        //echo $total;
         //return view('cart.index');
        // header('location:shop');
        // return redirect()->route('shop');
@@ -83,7 +83,7 @@ class CartController extends Controller
         $total = 0;
         foreach ($cart as $id => $quantity){
             $product = Product::query()->where('id', $id)->first();
-            if($product !== null || $quantity >0){
+            if($product !== null && $quantity >0){
                 $total += $product->price * $quantity;
             }
         }
@@ -118,7 +118,7 @@ class CartController extends Controller
         $total = 0;
         foreach ($cart as $id => $quantity){
             $product = Product::query()->where('id', $id)->first();
-            if($product !== null || $quantity >0){
+            if($product !== null && $quantity >0){
                 $total += $product->price * $quantity;
             }
         }
