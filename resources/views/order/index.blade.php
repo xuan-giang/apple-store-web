@@ -45,13 +45,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="shopping__cart__table">
+
                     <table>
                         <thead>
                         <tr>
                             <th>Mã đơn</th>
                             <th>Hàng</th>
                             <th>Địa chỉ</th>
-                            <th>Phương thức </th>
+                            <th>Thời gian </th>
                             <th></th>
                             <th>Tổng</th>
                             <th>Trạng thái</th>
@@ -61,6 +62,7 @@
                         <tbody>
                             <?php
                                 $i = 0;
+                            \Carbon\Carbon::setLocale('vi');
                             ?>
                             @if(sizeof($order)>0)
                             @foreach($order as $orders)
@@ -80,6 +82,7 @@
                                     </div>
                                 </td>
                                 <td class="quantity__item"><span class="quantity">{{$orders->address}}</span></td>
+
                                 <td class="quantity__item"><span class="quantity">{{Carbon\Carbon::parse($orders->created_at)->diffForHumans()}}</span></td>
                                 <td></td>
                                 <td class="quantity__item"><span class="quantity"><span style="color: #0a0e14">$</span>{{$orders->total_price}}</span></td>
@@ -100,14 +103,14 @@
                                     <a class="btn btn-info btn-sm" href="{{route('order-bill-detail',parameters: ['id'=>$orders->id_order])}}">
                                         <i class="fas fa-money-bill-alt">
                                         </i>
-                                        View
+                                        Xem
                                     </a>
 
                                     @if($orders->status === 1)
                                         <a class="btn btn-info btn-sm" onclick="return window.confirm('Are you sure you want to destroy this order? ?')" href="{{route('order-bill-destroy',parameters: ['id'=>$orders->id_order])}}" >
                                             <i class="fas fa-remove-alt">
                                             </i>
-                                            Destroy
+                                            Hủy đơn
                                         </a>
                                     @endif
                                 </td>
