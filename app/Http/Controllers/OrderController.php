@@ -23,7 +23,7 @@ class OrderController extends Controller
             $type_request = $request->input('type_bill');
 
        // dd($orderUser);
-        $orderUser = DB::table("order_list")->where("username",$userId)->where("status","=",$type_request )->get();
+        $orderUser = DB::table("order_list")->where("username",$userId)->where("status","=",$type_request )->orderBy("updated_at",'desc')->get();
 
         foreach($orderUser as $orders){
             $order_id = $orders->id_order;

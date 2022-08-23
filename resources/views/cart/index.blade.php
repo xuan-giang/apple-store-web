@@ -13,9 +13,9 @@
                 <div class="breadcrumb__text">
                     <h4>Shopping Cart</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Shopping Cart</span>
+                        <a href="{{route("home")}}">Trang chủ</a>
+                        <a href="{{route("shop")}}">Cửa hàng</a>
+                        <span>Giỏ hàng</span>
                     </div>
                 </div>
             </div>
@@ -33,9 +33,9 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Tổng</th>
 {{--                            <th>Mua</th>--}}
                             <th></th>
                         </tr>
@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="{{route('shop')}}">Continue Shopping</a>
+                            <a href="{{route('shop')}}">Tiếp tục mua hàng</a>
                         </div>
                     </div>
 {{--                    <div class="col-lg-6 col-md-6 col-sm-6">--}}
@@ -88,20 +88,20 @@
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>Discount codes</h6>
+                    <h6>Mã giảm giá</h6>
                     <form action="#">
-                        <input type="text" placeholder="Coupon code">
-                        <button type="submit">Apply</button>
+                        <input type="text" placeholder="Nhập mã">
+                        <button type="submit">Áp dụng</button>
                     </form>
                 </div>
                 <div class="cart__total">
-                    <h6>Cart total</h6>
+                    <h6>Tính tiền</h6>
                     <ul>
-                        <li>Subtotal <span id="subtotal">{{'$'.$total}}</span></li>
-                        <li>Total <span id="total">{{'$'.$total}}</span></li>
+                        <li>Tổng <span id="subtotal">{{'$'.$total}}</span></li>
+                        <li>Phải trả <span id="total">{{'$'.$total}}</span></li>
                     </ul>
                     <a @if(empty($_SESSION['cart'])) href="{{route('shop')}}"  onclick="myclick()"  @else  href="{{route('checkout')}}"  @endif
-            class="primary-btn">Proceed to checkout</a>
+            class="primary-btn">Đặt hàng</a>
                 </div>
             </div>
         </div>
