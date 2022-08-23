@@ -72,7 +72,7 @@
             <div class="col-lg-4 col-md-4">
                 <div class="header__nav__option">
                         @if (Illuminate\Support\Facades\Auth::check() === true)
-                            <a href="#">{{Auth::user()->fullname}}</a>
+                            <a href="{{route("user-detail")}}">{{Auth::user()->fullname}}</a>
                             <a href="{{route('logout')}}"><i class="fas fa-sign-out-alt"></i></a>
                         @else
                         <a href="{{asset('../login')}}">Đăng nhập</a>

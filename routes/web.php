@@ -161,3 +161,11 @@ Route::get('/order-bill-detail',
 
 Route::get('/order-bill-destroy',
     action : [OrderController::class,'destroy'])->name('order-bill-destroy');
+
+
+// user detail
+Route::get('/user-detail',
+    action : [\App\Http\Controllers\UserController::class,'index'])->name('user-detail');
+
+Route::get('/user-update',
+    action : [\App\Http\Controllers\UserController::class,'update'])->name('user-update');
