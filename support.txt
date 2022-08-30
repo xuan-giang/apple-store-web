@@ -45,3 +45,16 @@ tiến hành chạy
 #Tool hỗ trợ code laravel
     -Tạo debug bar tại chrome
         - composer require barryvdh/laravel-debugbar --dev
+
+        chạy heroku cmd
+    php /app/artisan migrate --seed
+    php artisan db:seed
+
+// tạo dữ liệu từ db sẵn có
+    composer require orangehill/iseed
+    php artisan iseed management_image_banner,order_detail,order_list,product,product_category,product_images,product_information,user,user_level
+
+
+// tạo generate tù db sẵn có
+    composer require --dev "kitloong/laravel-migrations-generator"
+    php artisan migrate:generate
